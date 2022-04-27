@@ -6,4 +6,5 @@ node_modules
 .env
 .env.*
 !.env.example
-*.sublime-project
+*.sublime-*
+static/smui.css
