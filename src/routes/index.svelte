@@ -48,6 +48,22 @@
   };
 </script>
 
+<svelte:head>
+  <title>Svelte Material UI</title>
+  <meta name="description" content="A demo of the Svelte Material UI library" />
+  <!-- Material Icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <!-- Roboto -->
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700"
+  />
+  <!-- Roboto Mono -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono" />
+  <!-- SMUI Styles -->
+  <link rel="stylesheet" href="/smui.css" />
+</svelte:head>
+
 <h1>Sample page for Svelte Material UI</h1>
 <p>Visit <a href="https://kit.svelte.dev">web.site.here</a> for more info</p>
 
