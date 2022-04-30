@@ -1,6 +1,6 @@
 <script context="module" lang="ts">
   /** @type {import('customers.Load} */
-  export async function load({ params, fetch, session, stuff }) {
+  export async function load({ fetch }) {
     const response = await fetch('./customers');
     return {
       status: response.status,
@@ -89,7 +89,7 @@
           <Cell>{customer.name}</Cell>
           <Cell>{Region[customer.region]}</Cell>
           <Cell>{Frequency[customer.frequency]}</Cell>
-          <Cell style="text-align: center">{@html customer.newsletter ? '&#10003;' : ''}</Cell>
+          <Cell style="text-align: center">{#if customer.newsletter}&#10003;{/if}</Cell>
         </Row>
       {/each}
     </Body>

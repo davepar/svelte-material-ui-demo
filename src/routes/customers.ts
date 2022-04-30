@@ -33,26 +33,29 @@ export type Customer = {
   newsletter: boolean;
 };
 
-const customers: Customer[] = [
-  {
-    name: 'Smith',
-    region: Region.North,
-    frequency: Frequency.Daily,
-    newsletter: false,
-  },
-  {
-    name: 'Jones',
-    region: Region.East,
-    frequency: Frequency.Monthly,
-    newsletter: true,
-  },
-  {
-    name: 'Parker',
-    region: Region.West,
-    frequency: Frequency.Weekly,
-    newsletter: false,
-  },
-];
+const names = [
+      'Adams',
+      'Baker',
+      'Carson',
+      'Drummond',
+      'Edwards',
+      'Fitz',
+      'Gerald',
+      'Henry',
+      'Ingalls',
+      'Jones',
+    ];
+const randomString = '64720385427040413919871186499625352912867870053653683';
+const randomChunks = randomString.repeat(40).match(/.{2}/g) as string[];
+const customers = randomChunks!.map(chunk => {
+  const [a, b] = chunk.split('').map(c => parseInt(c));
+  return {
+    name: names[a],
+    region: REGION_OPTIONS[b % REGION_OPTIONS.length].value,
+    frequency: FREQUENCY_OPTIONS[(a * b) % FREQUENCY_OPTIONS.length].value,
+    newsletter: (a + b) % 2 == 0,
+  }
+})
 
 /** @type {import('./customers').RequestHandler} */
 export function get() {
